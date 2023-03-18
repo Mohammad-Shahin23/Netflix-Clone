@@ -9,10 +9,9 @@ function App() {
   return (
    <>
    <NavBar />
-   <Home />
    <Routes>
-    <Route path="/" elemant={<Home />}></Route>
-    <Route path="/Favlist" elemant={<FavList />}></Route>
+    <Route path="/" element={<Home />}></Route>
+    <Route path="/Favlist" element={<FavList />}></Route>
 
 
    </Routes>
