@@ -16,7 +16,7 @@ function Home() {
     
     const [movieArr, setMovieArr] = useState([]);
     const  sendReq = async () => {
-        const serverUrl=`${process.env.REACT_APP_serverUrl}/trending`;
+        const serverUrl=`${process.env.REACT_APP_serverURL}/Trending`;
         const resData= await fetch(serverUrl);
         const data= await resData.json();
         console.log(data.results)
