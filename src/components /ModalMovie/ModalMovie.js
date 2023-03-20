@@ -4,7 +4,7 @@ import Image from 'react-bootstrap/Image';
 
 function ModelMovies(props) {
     return (
-        <Modal show={props.showFlag} onHide={props.handleClose}>
+        <Modal show={props.showFlag} onHide={props.handleclose}>
             <Modal.Header closeButton>
                 <Modal.Title>{props.memeData.name}</Modal.Title>
             </Modal.Header>
@@ -14,7 +14,7 @@ function ModelMovies(props) {
                 <p>{props.memeData.original_language}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={props.handleClose}>
+                <Button variant="secondary" onClick={props.handleclose}>
                     Close
                 </Button>
                 <Button variant="primary">
