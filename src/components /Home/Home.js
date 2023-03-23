@@ -24,7 +24,7 @@ function Home() {
     }
     useEffect(()=>{
         sendReq();
-    }, [])
+    }, [setMovieArr])
 return(
 <>
 <h1> Hello from home </h1>

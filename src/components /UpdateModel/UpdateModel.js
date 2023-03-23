@@ -3,68 +3,53 @@
 // import Form from 'react-bootstrap/Form';
 // import axios from 'axios';
 
-// function UpdateModal(props) {
 
-//     const updateMovie = async (e) =>{
-//         e.preventDefault();
+
+// function UpdateForm(props) {
+
+//     const sendUpdateReq = async (event) => {
+//         event.preventDefault();
 //         const obj = {
-//             name: e.target.name.value,
-//             overview: e.target.overview.value,
-//             genre_ids : e.target.genre_ids.value,
-//             popularity: e.target.popularity.value,
-//             poster_path : e.target.image.value
+//             title: event.target.name.value,
+//             poster_path: event.target.photo.value,
+//             overview: event.target.overview.value
 //         }
-//         console.log(props.item.id);
-//         const serverURl = `${process.env.REACT_APP_serverURL}/myMovies/${props.item.id}`
-//         const axiosRes = await axios.put(serverURl,obj);
-//         console.log(axiosRes.data);
-//         //close the update modal
-//         props.closeUpdateModal();
-//         //update the old FavArr
-//         props.takeNewArrFromChild(axiosRes.data);
-        
-
-//         console.log(obj);
+//         const serverURL = process.env.REACT_APP_serverURL;
+//         const response = await axios.put(`${serverURL}/favFlower/${props.item.num}`,obj);
+//         props.handleClose();
 //     }
 //     return (
-//         <Modal show={props.updateFlag} onHide={props.closeUpdateModal}>
+//         <Modal show={props.show} onHide={props.handleClose}>
 //             <Modal.Header closeButton>
-//                 <Modal.Title>Update Form</Modal.Title>
+//                 <Modal.Title>Update Flower</Modal.Title>
 //             </Modal.Header>
 //             <Modal.Body>
-//                 <Form onSubmit={updateMovie}>
-//                     <Form.Group className="mb-3">
+
+//                 <Form onSubmit={sendUpdateReq}>
+//                     <Form.Group className="mb-3" controlId="formBasicEmail">
 //                         <Form.Label>Name</Form.Label>
-//                         <Form.Control name="name" type="text" defaultValue={props.item.name}/>
-//                     </Form.Group>
-
-//                     <Form.Group className="mb-3">
-//                         <Form.Label>Image Path</Form.Label>
-//                         <Form.Control name="image" type="text" defaultValue={props.item.poster_path}/>
-//                     </Form.Group>
-
-//                     <Form.Group className="mb-3" >
-//                         <Form.Label>Top Text</Form.Label>
-//                         <Form.Control name="top_text" type="text" defaultValue={props.item.overview}/>
-//                     </Form.Group>
-
-//                     <Form.Group className="mb-3">
-//                         <Form.Label>Rank</Form.Label>
-//                         <Form.Control name="rank" type="text" defaultValue={props.item.popularity}/>
+//                         <Form.Control type="text" name="name" defaultValue={props.item.name}/>
 //                     </Form.Group>
 
 //                     <Form.Group className="mb-3" controlId="formBasicPassword">
-//                         <Form.Label>tags</Form.Label>
-//                         <Form.Control name="tags" type="text" defaultValue={props.item.genre_ids}/>
+//                         <Form.Label>Photo</Form.Label>
+//                         <Form.Control type="text" name="photo" defaultValue={props.item.photo}/>
 //                     </Form.Group>
-                    
+
+//                     <Form.Group className="mb-3" controlId="formBasicPassword">
+//                         <Form.Label>Info</Form.Label>
+//                         <Form.Control type="text" name="info" defaultValue={props.item.info}/>
+//                     </Form.Group>
+
+                   
 //                     <Button variant="primary" type="submit">
 //                         Submit
 //                     </Button>
 //                 </Form>
+
 //             </Modal.Body>
 //             <Modal.Footer>
-//                 <Button variant="secondary" onClick={props.closeUpdateModal}>
+//                 <Button variant="secondary" onClick={props.handleClose}>
 //                     Close
 //                 </Button>
 //             </Modal.Footer>
@@ -72,4 +57,4 @@
 //     )
 // }
 
-// export default UpdateModal;
+// export default UpdateForm;
